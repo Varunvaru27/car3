@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block content %}
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff9f0;
+      color: #333;
+    }
+
+  
+
+
+    #contact {
+      max-width: 700px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    #contact h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #5d4037;
+    }
+
+    form div {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1rem;
+      background-color: #fffdf9;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 0.9rem;
+      border: none;
+      background-color: #ffab91;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff8a65;
+    }
+
+    
+
+    @media (max-width: 600px) {
+      #contact h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+
+
+ 
+
+  <section id="contact">
+    <h2>Contact us</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div>
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" />
+      </div>
+
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+  {% endblock %}
+

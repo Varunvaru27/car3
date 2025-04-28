@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<div class="grid-container">
+    {% for car in cars %}
+    <a href="{% url 'kumar' car.id %}">
+    <div class="card">
+      
+      <img src="{{ car.image }}" >
+      <div class="card-content">
+        <h3>{{ car.make }}</h3>
+        {% if car.available == True %}
+        <p class="rating">⭐ {{ car.available}}</p>
+        {% else %}
+        <p class="rate">&#10071; {{ car.available}}</p>
+        {% endif %}
+      </div>
+    
+    </div>
+    </a>
+    {% endfor %}
+</div>
+
+
+{% endblock  %}

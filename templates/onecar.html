@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/onecar.css' %}">
+
+<div class="raj">
+    <div id="code1">
+        <img src="{{ car.image }}" >
+    </div>
+    <div id="code2">
+        <table>
+            <tr>
+                <td><h3>MAKE</h3></td>
+                 <td><h3>: {{car.make}}</h3> </td>
+            </tr> 
+            <tr>
+                <td><h3>AVAILABILITY</h3></td>
+                <td><h3>: {{car.available}}</h3></td>
+
+            </tr>    
+
+             <tr>
+                <td><h3>MODEL </h3></td>
+                <td><h3>: {{car.model}}</h3></td>
+
+             </tr>
+              <tr>
+                <td><h3>TYPE</h3></td>
+                <td><h3>: {{car.type}}</h3></td>
+              </tr>
+              <tr>
+                <td><h3>YEAR </h3></td>
+                <td><h3>: {{car.year}}</h3></td>
+              </tr>
+              
+        
+    </table>
+    <style>
+        .button-book {
+          background-color: #43ec43;
+          color: white;
+          padding: 12px 25px;
+          font-size: 18px;
+          font-weight: bold;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .button-book:hover {
+          background-color: #36c936;
+          transform: translateY(-2px);
+        }
+        </style>
+        {% if car.available == True %}
+        
+       <center><button class="button-book">Book Now</button></center> 
+        {% else %}
+        <center><button class="button_bag">not available</button></center>
+
+        {% endif %}
+        
+
+    </div>
+</div>
+
+
+
+
+{% endblock  %}
